@@ -1,0 +1,20 @@
+services:
+  backend:
+    container_name: backend
+    build: ./backend
+    networks:
+      - my_network
+    ports:
+      - "5000:5000"
+
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    networks:
+      - my_network
+    ports:
+      - "8080:80"
+
+networks:
+  my_network:
+    driver: bridge
