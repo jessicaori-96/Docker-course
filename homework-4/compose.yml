@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  backend:
+    image: docker.jala.pro/docker-training/backend:calebespinoza
+    container_name: backend
+    networks:
+      - jala-network
+    volumes:
+      - backend-data:/add/data
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: docker.jala.pro/docker-training/frontend:calebespinoza
+    container_name: frontend
+    networks:
+      - jala-network
+    volumes:
+      - frontend-data:/add/data
+    ports:
+      - "3000:80"
+
+networks:
+  jala-network:
+    external: true
+
+volumes:
+  backend-data:
+  frontend-data:
