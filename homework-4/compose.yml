@@ -3,7 +3,7 @@ version: "3.9"
 services:
   api:
     image: docker.jala.pro/docker-training/backend:calebespinoza
-    container_name: backend
+    container_name: api
     networks:
       - jala-network
     volumes:
@@ -13,7 +13,7 @@ services:
 
   fe:
     image: docker.jala.pro/docker-training/frontend:calebespinoza
-    container_name: frontend
+    container_name: fe
     networks:
       - jala-network
     volumes:
